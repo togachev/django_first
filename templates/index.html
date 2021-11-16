@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+
+{% endblock %}
+
+{% block content %}
+    <h2>Автор: {{user.name}} {{user.last_name}}</h2>
+    <b><a href="{% url 'items_list' %}">Список товаров</a></b>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+
+
+    <li><a href="{% url 'items_list' %}">Список товаров</a></li>
+    <li>{{ item.name }}</li>
+{% endblock %}
+
+{% block content %}
+    <h2>Наименование товара: {{ item.name }} (ID:{{ item.id }})</h2>
+    <h3>Брэнд: {{ item.brand }}</h3>
+    <h3>Количество: {{ item.count | default:"Данного товара нет в наличии" }}</h3>
+    <a href="{% url 'items_list' %}">Вернуться к списку</a>
+
+{% endblock %}
